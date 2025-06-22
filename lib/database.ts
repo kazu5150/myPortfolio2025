@@ -253,6 +253,81 @@ export async function updateContactMessageStatus(id: string, status: ContactMess
   return data as ContactMessage
 }
 
+// 実験的プロジェクト関連の操作
+export async function getExperimentalProjects(userId?: string, isPublicOnly = true) {
+  let query = supabase.from('experimental_projects').select('*')
+  
+  if (userId) {
+    query = query.eq('user_id', userId)
+  } else if (isPublicOnly) {
+    query = query.eq('is_public', true)
+  }
+  
+  const { data, error } = await query.order('last_updated', { ascending: false })
+
+  if (error) throw error
+  return data
+}
+
+export async function getExperimentalProjectById(id: string) {
+  const { data, error } = await supabase
+    .from('experimental_projects')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) throw error
+  return data
+}
+
+export async function createExperimentalProject(project: {
+  user_id: string
+  title: string
+  description?: string
+  short_description?: string
+  status: string
+  category: string
+  technologies: string[]
+  start_date: string
+  github_url?: string
+  demo_url?: string
+  thumbnail_url?: string
+  learning_goals: string[]
+  challenges: string[]
+  progress: number
+  is_public?: boolean
+}) {
+  const { data, error } = await supabase
+    .from('experimental_projects')
+    .insert([project])
+    .select()
+    .single()
+
+  if (error) throw error
+  return data
+}
+
+export async function updateExperimentalProject(id: string, updates: any) {
+  const { data, error } = await supabase
+    .from('experimental_projects')
+    .update(updates)
+    .eq('id', id)
+    .select()
+    .single()
+
+  if (error) throw error
+  return data
+}
+
+export async function deleteExperimentalProject(id: string) {
+  const { error } = await supabase
+    .from('experimental_projects')
+    .delete()
+    .eq('id', id)
+
+  if (error) throw error
+}
+
 // 統計データの取得
 export async function getLearningStats(userId: string) {
   // 総学習時間

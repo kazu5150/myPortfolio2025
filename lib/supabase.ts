@@ -68,3 +68,25 @@ export interface ContactMessage {
   status: 'unread' | 'read' | 'replied'
   created_at: string
 }
+
+export interface ExperimentalProject {
+  id: string
+  user_id: string
+  title: string
+  description?: string
+  short_description?: string
+  status: 'planning' | 'developing' | 'testing' | 'completed' | 'paused'
+  category: 'web' | 'mobile' | 'ai' | 'game' | 'tool' | 'other'
+  technologies: string[]
+  start_date: string
+  last_updated: string
+  github_url?: string
+  demo_url?: string
+  thumbnail_url?: string
+  learning_goals: string[]
+  challenges: string[]
+  progress: number
+  is_public: boolean
+  created_at: string
+  updated_at: string
+}
