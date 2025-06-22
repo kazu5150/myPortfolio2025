@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+.dark {
+  --background: 10 10 10;
+  --foreground: 255 255 255;
+  --card: 26 26 26;
+  --card-foreground: 255 255 255;
+  --popover: 26 26 26;
+  --popover-foreground: 255 255 255;
+  --primary: 0 217 255;
+  --primary-foreground: 10 10 10;
+  --secondary: 42 42 42;
+  --secondary-foreground: 255 255 255;
+  --muted: 42 42 42;
+  --muted-foreground: 161 161 170;
+  --accent: 124 58 237;
+  --accent-foreground: 255 255 255;
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 42 42 42;
+  --input: 42 42 42;
+  --ring: 0 217 255;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+
+  .neon-glow {
+    @apply shadow-[0_0_20px_rgba(0,217,255,0.3)];
+  }
+
+  /* Animation delay classes for hydration-safe animations */
+  .animation-delay-0 {
+    animation-delay: 0ms;
+  }
+  .animation-delay-1 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-2 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-3 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-4 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-5 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-6 {
+    animation-delay: 600ms;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#00D9FF] to-[#7C3AED] bg-clip-text text-transparent;
+  }
+
+  /* Shimmer animation */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+
+/* Markdownプレビュー用スタイル */
+.prose {
+  color: rgb(255 255 255 / 0.9);
+  max-width: none;
+}
+
+.prose h1 {
+  @apply text-2xl font-bold text-white mb-4 border-b border-white/20 pb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-bold text-white mb-3 mt-6;
+}
+
+.prose h3 {
+  @apply text-lg font-bold text-white mb-2 mt-4;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul, .prose ol {
+  @apply mb-4 pl-6;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose code {
+  @apply bg-white/10 px-1 py-0.5 rounded text-sm font-mono text-[#00D9FF];
+}
+
+.prose pre {
+  @apply bg-white/5 rounded-lg p-4 mb-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-[#00D9FF] pl-4 italic text-white/80 my-4;
+}
+
+.prose a {
+  @apply text-[#00D9FF] hover:text-[#7C3AED] underline transition-colors;
+}
+
+.prose strong {
+  @apply font-bold text-white;
+}
+
+.prose table {
+  @apply w-full border-collapse mb-4;
+}
+
+.prose th, .prose td {
+  @apply border border-white/20 px-3 py-2 text-left;
+}
+
+.prose th {
+  @apply bg-white/5 font-bold;
+}
