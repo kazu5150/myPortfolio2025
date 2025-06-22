@@ -297,13 +297,31 @@ export async function createExperimentalProject(project: {
   progress: number
   is_public?: boolean
 }) {
+  console.log('createExperimentalProject実行開始:', project)
+  
   const { data, error } = await supabase
     .from('experimental_projects')
     .insert([project])
     .select()
     .single()
 
-  if (error) throw error
+  console.log('Supabaseレスポンス:', { data, error })
+  
+  if (error) {
+    console.error('Supabaseエラー詳細:')
+    console.error('- message:', error.message)
+    console.error('- details:', error.details)
+    console.error('- hint:', error.hint)
+    console.error('- code:', error.code)
+    console.error('- 完全なエラーオブジェクト:', error)
+    throw new Error(`Supabaseエラー: ${error.message}`)
+  }
+  
+  if (!data) {
+    console.error('データが空です - RLSポリシーの問題の可能性があります')
+    throw new Error('プロジェクトの作成に失敗しました: データが返されませんでした')
+  }
+  
   return data
 }
 
