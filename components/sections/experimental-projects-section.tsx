@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { GlassCard } from "@/components/ui/glass-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Play, Calendar, Clock, Zap, Code2, Beaker } from "lucide-react"
+import { ExternalLink, Github, Play, Calendar, Clock, Zap, Code2, Beaker, Plus } from "lucide-react"
 import Link from "next/link"
 import { getExperimentalProjects } from "@/lib/database"
 import { ExperimentalProject } from "@/lib/supabase"
@@ -71,6 +71,20 @@ export function ExperimentalProjectsSection() {
 
   return (
     <div>
+      {/* ヘッダーアクション */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-white">プロジェクト一覧</h2>
+        <Button
+          className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+          asChild
+        >
+          <Link href="/experiments/new">
+            <Plus className="w-4 h-4 mr-2" />
+            新規プロジェクト
+          </Link>
+        </Button>
+      </div>
+
       {/* フィルター */}
       <div className="mb-8 flex flex-wrap gap-4">
         <div className="flex items-center gap-2">
