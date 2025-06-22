@@ -4,10 +4,20 @@ import { useState, useEffect } from 'react'
 import { GlassCard } from "@/components/ui/glass-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Play, Calendar, Clock, Zap, Code2, Beaker, Plus } from "lucide-react"
+import { ExternalLink, Github, Play, Calendar, Clock, Zap, Code2, Beaker, Plus, Trash2 } from "lucide-react"
 import Link from "next/link"
-import { getExperimentalProjects } from "@/lib/database"
+import { getExperimentalProjects, deleteExperimentalProject } from "@/lib/database"
 import { ExperimentalProject } from "@/lib/supabase"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 // ステータスの日本語表示とカラー
 const statusConfig = {
@@ -33,6 +43,9 @@ export function ExperimentalProjectsSection() {
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [projectToDelete, setProjectToDelete] = useState<ExperimentalProject | null>(null)
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -53,6 +66,31 @@ export function ExperimentalProjectsSection() {
 
     fetchProjects()
   }, [])
+
+  const handleDeleteClick = (project: ExperimentalProject) => {
+    setProjectToDelete(project)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!projectToDelete) return
+
+    try {
+      setIsDeleting(true)
+      await deleteExperimentalProject(projectToDelete.id)
+      
+      // プロジェクトリストから削除
+      setProjects(projects.filter(p => p.id !== projectToDelete.id))
+      
+      setDeleteDialogOpen(false)
+      setProjectToDelete(null)
+    } catch (error) {
+      console.error('Failed to delete project:', error)
+      // エラーハンドリング（必要に応じてトースト通知を追加）
+    } finally {
+      setIsDeleting(false)
+    }
+  }
 
   // フィルタリング
   const filteredProjects = projects.filter(project => {
@@ -239,6 +277,14 @@ export function ExperimentalProjectsSection() {
                     詳細を見る
                   </Link>
                 </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="bg-red-500/10 border-red-500/30 hover:bg-red-500/20 text-red-400"
+                  onClick={() => handleDeleteClick(project)}
+                >
+                  <Trash2 className="w-4 h-4" />
+                </Button>
               </div>
             </GlassCard>
           )
@@ -250,6 +296,33 @@ export function ExperimentalProjectsSection() {
           <p className="text-white/60">該当するプロジェクトがありません</p>
         </div>
       )}
+
+      {/* 削除確認ダイアログ */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent className="bg-dark-800 border-white/10">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-white">プロジェクトを削除しますか？</AlertDialogTitle>
+            <AlertDialogDescription className="text-white/70">
+              「{projectToDelete?.title}」を削除します。この操作は取り消せません。
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel 
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              disabled={isDeleting}
+            >
+              キャンセル
+            </AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-red-600 hover:bg-red-700 text-white"
+              onClick={handleDeleteConfirm}
+              disabled={isDeleting}
+            >
+              {isDeleting ? '削除中...' : '削除'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }

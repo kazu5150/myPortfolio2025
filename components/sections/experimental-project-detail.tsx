@@ -21,10 +21,23 @@ import {
   CheckCircle2,
   Circle,
   Share2,
-  Edit
+  Edit,
+  Trash2
 } from 'lucide-react'
 import Link from 'next/link'
 import { GradientText } from '@/components/ui/gradient-text'
+import { deleteExperimentalProject } from '@/lib/database'
+import { useRouter } from 'next/navigation'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
 
 interface ExperimentalProjectDetailProps {
   project: ExperimentalProject
@@ -51,6 +64,9 @@ const categoryConfig = {
 
 export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetailProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'progress' | 'resources'>('overview')
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const router = useRouter()
   const StatusIcon = statusConfig[project.status].icon
   
   const handleShare = () => {
@@ -63,6 +79,25 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
     } else {
       navigator.clipboard.writeText(window.location.href)
       alert('URLをコピーしました！')
+    }
+  }
+
+  const handleDeleteClick = () => {
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    try {
+      setIsDeleting(true)
+      await deleteExperimentalProject(project.id)
+      
+      // プロジェクト一覧ページにリダイレクト
+      router.push('/experiments')
+    } catch (error) {
+      console.error('Failed to delete project:', error)
+      // エラーハンドリング
+    } finally {
+      setIsDeleting(false)
     }
   }
 
@@ -388,6 +423,14 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
                   編集（管理者）
                 </Link>
               </Button>
+              <Button 
+                className="w-full bg-red-500/10 border-red-500/30 hover:bg-red-500/20 text-red-400"
+                variant="outline"
+                onClick={handleDeleteClick}
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                削除
+              </Button>
             </div>
           </GlassCard>
 
@@ -413,6 +456,33 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
           </GlassCard>
         </div>
       </div>
+
+      {/* 削除確認ダイアログ */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent className="bg-dark-800 border-white/10">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-white">プロジェクトを削除しますか？</AlertDialogTitle>
+            <AlertDialogDescription className="text-white/70">
+              「{project.title}」を削除します。この操作は取り消せません。
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel 
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              disabled={isDeleting}
+            >
+              キャンセル
+            </AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-red-600 hover:bg-red-700 text-white"
+              onClick={handleDeleteConfirm}
+              disabled={isDeleting}
+            >
+              {isDeleting ? '削除中...' : '削除'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }
