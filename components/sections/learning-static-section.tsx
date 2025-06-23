@@ -17,7 +17,7 @@ export function LearningStaticSection() {
             継続的な学習の軌跡を可視化
           </p>
           <Button
-            className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-6"
+            className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
             asChild
           >
             <Link href="/learning">
@@ -30,7 +30,7 @@ export function LearningStaticSection() {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Clock className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">245h</div>
@@ -38,7 +38,7 @@ export function LearningStaticSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#7C3AED] to-[#A855F7] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Flame className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">15日</div>
@@ -46,7 +46,7 @@ export function LearningStaticSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#10B981] to-[#059669] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Calendar className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">32.5h</div>
@@ -54,7 +54,7 @@ export function LearningStaticSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#F59E0B] to-[#D97706] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-800 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Trophy className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">47</div>
@@ -66,7 +66,7 @@ export function LearningStaticSection() {
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
           {/* Weekly Progress Chart */}
           <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00D9FF]/5 to-[#0EA5E9]/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5" />
             <div className="relative z-10">
               <h3 className="text-lg font-bold mb-4 flex items-center">
                 <BarChart3 className="w-5 h-5 mr-2 text-[#00D9FF]" />
@@ -75,17 +75,17 @@ export function LearningStaticSection() {
               <div className="h-48 flex items-end justify-center space-x-4">
                 <div className="flex flex-col items-center">
                   <div className="text-xs text-white/60 mb-2">4.5h</div>
-                  <div className="w-12 bg-gradient-to-t from-[#00D9FF] to-[#0EA5E9] rounded-t-lg" style={{ height: '45%' }} />
+                  <div className="w-12 bg-blue-500 rounded-t-lg" style={{ height: '45%' }} />
                   <div className="text-xs text-white/60 mt-2">6/3</div>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="text-xs text-white/60 mb-2">6.2h</div>
-                  <div className="w-12 bg-gradient-to-t from-[#00D9FF] to-[#0EA5E9] rounded-t-lg" style={{ height: '62%' }} />
+                  <div className="w-12 bg-blue-500 rounded-t-lg" style={{ height: '62%' }} />
                   <div className="text-xs text-white/60 mt-2">6/10</div>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="text-xs text-white/60 mb-2">8.0h</div>
-                  <div className="w-12 bg-gradient-to-t from-[#00D9FF] to-[#0EA5E9] rounded-t-lg" style={{ height: '80%' }} />
+                  <div className="w-12 bg-blue-500 rounded-t-lg" style={{ height: '80%' }} />
                   <div className="text-xs text-white/60 mt-2">6/17</div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export function LearningStaticSection() {
 
           {/* Technology Distribution */}
           <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/5 to-[#A855F7]/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-700/5" />
             <div className="relative z-10">
               <h3 className="text-lg font-bold mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2 text-[#7C3AED]" />
@@ -107,7 +107,7 @@ export function LearningStaticSection() {
                     <span className="text-white/60">42h</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
-                    <div className="h-full bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] rounded-full" style={{ width: '84%' }} />
+                    <div className="h-full bg-blue-500 rounded-full" style={{ width: '84%' }} />
                   </div>
                 </div>
                 <div className="space-y-1">
@@ -116,7 +116,7 @@ export function LearningStaticSection() {
                     <span className="text-white/60">35h</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
-                    <div className="h-full bg-gradient-to-r from-[#7C3AED] to-[#A855F7] rounded-full" style={{ width: '70%' }} />
+                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '70%' }} />
                   </div>
                 </div>
                 <div className="space-y-1">
@@ -125,7 +125,7 @@ export function LearningStaticSection() {
                     <span className="text-white/60">28h</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
-                    <div className="h-full bg-gradient-to-r from-[#10B981] to-[#059669] rounded-full" style={{ width: '56%' }} />
+                    <div className="h-full bg-blue-700 rounded-full" style={{ width: '56%' }} />
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export function LearningStaticSection() {
 
           {/* Daily Trend */}
           <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 to-[#059669]/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-700/5 to-blue-800/5" />
             <div className="relative z-10">
               <h3 className="text-lg font-bold mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2 text-[#10B981]" />
@@ -143,12 +143,12 @@ export function LearningStaticSection() {
               <div className="h-48 flex items-end justify-center space-x-2">
                 <div className="flex flex-col items-center">
                   <div className="text-xs text-white/60 mb-1">5h</div>
-                  <div className="w-6 bg-gradient-to-t from-[#10B981] to-[#34D399] rounded-t" style={{ height: '62%' }} />
+                  <div className="w-6 bg-blue-500 rounded-t" style={{ height: '62%' }} />
                   <div className="text-xs text-white/60 mt-1">6/21</div>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="text-xs text-white/60 mb-1">4h</div>
-                  <div className="w-6 bg-gradient-to-t from-[#10B981] to-[#34D399] rounded-t" style={{ height: '50%' }} />
+                  <div className="w-6 bg-blue-500 rounded-t" style={{ height: '50%' }} />
                   <div className="text-xs text-white/60 mt-1">6/22</div>
                 </div>
               </div>

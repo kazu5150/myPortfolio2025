@@ -54,7 +54,7 @@ export default function DashboardPage() {
             </div>
             <Dialog open={isAddingRecord} onOpenChange={setIsAddingRecord}>
               <DialogTrigger asChild>
-                <Button className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold">
+                <Button className="bg-blue-500 text-white font-semibold hover:bg-blue-600">
                   <Plus className="w-4 h-4 mr-2" />
                   新規追加
                 </Button>
@@ -70,7 +70,7 @@ export default function DashboardPage() {
                   <Input placeholder="学習時間（分）" type="number" className="bg-white/5 border-white/20" />
                   <Input placeholder="使用技術（カンマ区切り）" className="bg-white/5 border-white/20" />
                   <div className="flex gap-2">
-                    <Button className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black flex-1">保存</Button>
+                    <Button className="bg-blue-500 text-white flex-1 hover:bg-blue-600">保存</Button>
                     <Button variant="outline" onClick={() => setIsAddingRecord(false)} className="border-white/20">
                       キャンセル
                     </Button>

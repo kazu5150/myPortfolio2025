@@ -364,7 +364,7 @@ export default function NewExperimentPage() {
               <div className="flex gap-4 pt-6">
                 <Button
                   type="submit"
-                  className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+                  className="bg-blue-500 text-white font-semibold hover:bg-blue-600"
                   disabled={loading}
                 >
                   <Save className="w-4 h-4 mr-2" />

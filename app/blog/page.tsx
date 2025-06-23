@@ -64,7 +64,7 @@ function BlogPage() {
               学習過程での気づき、技術Tips、プロジェクトの振り返りを記録
             </p>
             <Button
-              className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-6"
+              className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
               asChild
             >
               <Link href="/blog/new">
@@ -99,7 +99,7 @@ function BlogPage() {
               <div className="col-span-full text-center py-12">
                 <p className="text-white/60 text-lg">まだブログ記事がありません</p>
                 <Button
-                  className="mt-4 bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+                  className="mt-4 bg-blue-500 text-white font-semibold hover:bg-blue-600"
                   asChild
                 >
                   <Link href="/blog/new">最初の記事を作成</Link>
@@ -157,7 +157,7 @@ function BlogPage() {
           {/* Load More */}
           {blogPosts.length > 0 && (
             <div className="text-center mt-12">
-              <Button size="lg" className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-8">
+              <Button size="lg" className="bg-blue-500 text-white font-semibold px-8 hover:bg-blue-600">
                 もっと読む
               </Button>
             </div>

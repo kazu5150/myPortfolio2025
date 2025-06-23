@@ -50,7 +50,7 @@ export default function TestDatabasePage() {
           <Button 
             onClick={testConnection} 
             disabled={loading}
-            className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-8"
+            className="bg-blue-500 text-white font-semibold px-8 hover:bg-blue-600"
           >
             {loading ? '接続中...' : 'データベース接続テスト'}
           </Button>

@@ -205,7 +205,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <div className="mt-12 text-center">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-8"
+              className="bg-blue-500 text-white font-semibold px-8 hover:bg-blue-600"
               asChild
             >
               <Link href="/blog">他の記事を読む</Link>

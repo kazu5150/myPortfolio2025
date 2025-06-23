@@ -253,7 +253,7 @@ export default function LearningPage() {
             </p>
             <Button
               onClick={() => setShowForm(!showForm)}
-              className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-6"
+              className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
             >
               <Plus className="w-4 h-4 mr-2" />
               新しい学習記録
@@ -447,7 +447,7 @@ export default function LearningPage() {
                     <Button
                       type="submit"
                       disabled={saving}
-                      className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+                      className="bg-blue-500 text-white font-semibold hover:bg-blue-600"
                     >
                       {saving ? '保存中...' : editingRecord ? '更新する' : '記録を保存'}
                     </Button>
@@ -477,7 +477,7 @@ export default function LearningPage() {
                 <p className="text-white/60 text-lg mb-4">まだ学習記録がありません</p>
                 <Button
                   onClick={() => setShowForm(true)}
-                  className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+                  className="bg-blue-500 text-white font-semibold hover:bg-blue-600"
                 >
                   最初の記録を作成
                 </Button>
@@ -488,7 +488,7 @@ export default function LearningPage() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <CardTitle className="text-xl font-bold bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] bg-clip-text text-transparent mb-3">
+                        <CardTitle className="text-xl font-bold text-white mb-3">
                           {record.title}
                         </CardTitle>
                         <div className="flex items-center space-x-4 mb-3">

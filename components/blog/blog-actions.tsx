@@ -102,7 +102,7 @@ export function BlogActions({ post, onUpdate }: BlogActionsProps) {
         <DropdownMenuItem 
           onClick={handleDelete}
           disabled={isDeleting}
-          className="text-red-400 focus:text-red-300"
+          className="text-white/60 focus:text-white/80"
         >
           <Trash2 className="w-4 h-4 mr-2" />
           {isDeleting ? '削除中...' : '削除'}

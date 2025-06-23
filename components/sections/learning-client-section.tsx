@@ -119,7 +119,7 @@ export function LearningClientSection() {
             継続的な学習の軌跡を可視化
           </p>
           <Button
-            className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-6"
+            className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
             asChild
           >
             <Link href="/learning">
@@ -132,7 +132,7 @@ export function LearningClientSection() {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <GlassCard className="p-4 text-center">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Clock className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">
@@ -142,7 +142,7 @@ export function LearningClientSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#7C3AED] to-[#A855F7] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Calendar className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">
@@ -152,7 +152,7 @@ export function LearningClientSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#10B981] to-[#059669] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Trophy className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">
@@ -162,7 +162,7 @@ export function LearningClientSection() {
           </GlassCard>
 
           <GlassCard className="p-4 text-center">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#F59E0B] to-[#D97706] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-8 h-8 bg-blue-800 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Target className="w-4 h-4 text-white" />
             </div>
             <div className="text-xl font-bold text-white mb-1">
@@ -199,7 +199,7 @@ export function LearningClientSection() {
                         <div className="text-xs text-white/60 mb-2">{week.hours}h</div>
                         <div className="w-full max-w-[48px] relative h-32">
                           <div 
-                            className="absolute bottom-0 w-full bg-gradient-to-t from-[#00D9FF] to-[#0EA5E9] rounded-t-lg transition-all duration-300"
+                            className="absolute bottom-0 w-full bg-blue-500 rounded-t-lg transition-all duration-300"
                             style={{ height: `${Math.max(heightPercent, 10)}%` }}
                           />
                         </div>
@@ -227,7 +227,7 @@ export function LearningClientSection() {
                 techData.map((tech, index) => {
                   const maxHours = Math.max(...techData.map(t => t.hours))
                   const width = maxHours > 0 ? (tech.hours / maxHours) * 100 : 0
-                  const colors = ['from-[#00D9FF] to-[#0EA5E9]', 'from-[#7C3AED] to-[#A855F7]', 'from-[#10B981] to-[#059669]']
+                  const colors = ['bg-blue-500', 'bg-blue-600', 'bg-blue-700']
                   return (
                     <div key={tech.tech} className="space-y-1">
                       <div className="flex justify-between text-sm">
@@ -236,7 +236,7 @@ export function LearningClientSection() {
                       </div>
                       <div className="w-full bg-white/10 rounded-full h-2">
                         <div 
-                          className={`h-full bg-gradient-to-r ${colors[index % colors.length]} rounded-full transition-all duration-300`}
+                          className={`h-full ${colors[index % colors.length]} rounded-full transition-all duration-300`}
                           style={{ width: `${Math.max(width, 5)}%` }}
                         />
                       </div>

@@ -11,9 +11,9 @@ export function GlassCard({ children, className, glow = false, ...props }: Glass
   return (
     <Card
       className={cn(
-        "bg-white/5 backdrop-blur-lg border border-white/10",
-        "hover:bg-white/10 hover:border-white/20 transition-all duration-300",
-        glow && "hover:shadow-glow",
+        "bg-white/[0.02] border border-white/10 rounded-lg",
+        "hover:bg-white/[0.03] transition-colors duration-200",
+        glow && "shadow-lg shadow-blue-500/5",
         className,
       )}
       {...props}

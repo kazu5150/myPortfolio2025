@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED] rounded-lg"></div>
+              <div className="w-8 h-8 bg-blue-500 rounded-lg"></div>
               <GradientText className="text-xl font-bold font-display">AI Portfolio</GradientText>
             </div>
             <p className="text-white/70 mb-6 max-w-md">

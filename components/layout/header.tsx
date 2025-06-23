@@ -34,10 +34,10 @@ export function Header() {
         <GlassCard className={`px-6 py-4 transition-all duration-300 ${isScrolled ? "bg-white/10" : "bg-white/5"}`}>
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg">
                 <Code2 className="w-5 h-5 text-white" />
               </div>
-              <GradientText className="text-xl font-bold font-display">AI Portfolio</GradientText>
+              <span className="text-xl font-light font-display gradient-text">AI Portfolio</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -46,13 +46,13 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white/70 hover:text-white transition-colors duration-200 font-medium"
+                  className="text-white/70 hover:text-white transition-all duration-200 font-light tracking-wide relative group"
                 >
                   {item.name}
                 </Link>
               ))}
               <Button
-                className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold hover:shadow-glow transition-all duration-300"
+                className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                 asChild
               >
                 <Link href="#contact">Contact</Link>
@@ -72,13 +72,13 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-white/70 hover:text-white transition-colors text-lg"
+                      className="text-white/70 hover:text-white transition-colors text-lg font-light tracking-wide"
                     >
                       {item.name}
                     </Link>
                   ))}
                   <Button
-                    className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold w-full"
+                    className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold w-full hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                     asChild
                   >
                     <Link href="#contact">Contact</Link>

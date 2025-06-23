@@ -220,7 +220,7 @@ export default function NewBlogPage() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold flex-1"
+                    className="bg-blue-500 text-white font-semibold flex-1 hover:bg-blue-600"
                   >
                     <Save className="w-4 h-4 mr-2" />
                     {loading ? '保存中...' : '保存'}

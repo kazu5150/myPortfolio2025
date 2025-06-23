@@ -321,7 +321,7 @@ export default function BlogEditPage({ params }: BlogEditPageProps) {
                     <Button
                       type="submit"
                       disabled={saving}
-                      className="w-full bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold"
+                      className="w-full bg-blue-500 text-white font-semibold hover:bg-blue-600"
                     >
                       <Save className="w-4 h-4 mr-2" />
                       {saving ? '保存中...' : '記事を更新'}

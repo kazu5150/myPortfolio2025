@@ -45,21 +45,21 @@ interface ExperimentalProjectDetailProps {
 
 // ステータスの設定
 const statusConfig = {
-  planning: { label: '計画中', color: 'bg-gray-500/20 text-gray-300 border-gray-500/30', icon: Circle },
-  developing: { label: '開発中', color: 'bg-blue-500/20 text-blue-300 border-blue-500/30', icon: Code2 },
-  testing: { label: 'テスト中', color: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30', icon: AlertCircle },
-  completed: { label: '完成', color: 'bg-green-500/20 text-green-300 border-green-500/30', icon: CheckCircle2 },
-  paused: { label: '一時停止', color: 'bg-orange-500/20 text-orange-300 border-orange-500/30', icon: Circle }
+  planning: { label: '計画中', color: 'bg-white/10 text-white/70 border-white/20', icon: Circle },
+  developing: { label: '開発中', color: 'bg-white/10 text-white/70 border-white/20', icon: Code2 },
+  testing: { label: 'テスト中', color: 'bg-white/10 text-white/70 border-white/20', icon: AlertCircle },
+  completed: { label: '完成', color: 'bg-white/20 text-white/80 border-white/30', icon: CheckCircle2 },
+  paused: { label: '一時停止', color: 'bg-white/5 text-white/50 border-white/10', icon: Circle }
 }
 
 // カテゴリの設定
 const categoryConfig = {
-  web: { label: 'Web開発', color: 'from-blue-500 to-cyan-500' },
-  mobile: { label: 'モバイル開発', color: 'from-purple-500 to-pink-500' },
-  ai: { label: 'AI/機械学習', color: 'from-green-500 to-emerald-500' },
-  game: { label: 'ゲーム開発', color: 'from-orange-500 to-red-500' },
-  tool: { label: 'ツール開発', color: 'from-gray-500 to-gray-600' },
-  other: { label: 'その他', color: 'from-indigo-500 to-purple-500' }
+  web: { label: 'Web開発', color: 'from-blue-500 to-blue-600' },
+  mobile: { label: 'モバイル開発', color: 'from-blue-600 to-blue-700' },
+  ai: { label: 'AI/機械学習', color: 'from-blue-700 to-blue-800' },
+  game: { label: 'ゲーム開発', color: 'from-blue-800 to-blue-900' },
+  tool: { label: 'ツール開発', color: 'from-blue-400 to-blue-500' },
+  other: { label: 'その他', color: 'from-blue-600 to-blue-700' }
 }
 
 export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetailProps) {
@@ -123,7 +123,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
                 <StatusIcon className="w-4 h-4 mr-1.5" />
                 {statusConfig[project.status].label}
               </div>
-              <Badge className={`bg-gradient-to-r ${categoryConfig[project.category].color} text-white border-0`}>
+              <Badge className={`bg-gradient-to-r ${categoryConfig[project.category].color} text-white/90 border-0`}>
                 {categoryConfig[project.category].label}
               </Badge>
               <div className="flex items-center text-sm text-white/60">
@@ -196,7 +196,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
         >
           概要
           {activeTab === 'overview' && (
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED]" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20" />
           )}
         </button>
         <button
@@ -209,7 +209,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
         >
           進捗と学習
           {activeTab === 'progress' && (
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED]" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20" />
           )}
         </button>
         <button
@@ -222,7 +222,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
         >
           リソース
           {activeTab === 'resources' && (
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED]" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20" />
           )}
         </button>
       </div>
@@ -235,7 +235,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
               {/* プロジェクト説明 */}
               <GlassCard className="p-6">
                 <h2 className="text-xl font-bold mb-4 flex items-center">
-                  <BookOpen className="w-5 h-5 mr-2 text-[#00D9FF]" />
+                  <BookOpen className="w-5 h-5 mr-2 text-white/70" />
                   プロジェクト概要
                 </h2>
                 <div className="prose prose-invert max-w-none">
@@ -246,7 +246,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
               {/* 技術スタック */}
               <GlassCard className="p-6">
                 <h2 className="text-xl font-bold mb-4 flex items-center">
-                  <Code2 className="w-5 h-5 mr-2 text-[#7C3AED]" />
+                  <Code2 className="w-5 h-5 mr-2 text-white/70" />
                   使用技術
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -269,13 +269,13 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
               {/* 学習目標 */}
               <GlassCard className="p-6">
                 <h2 className="text-xl font-bold mb-4 flex items-center">
-                  <Target className="w-5 h-5 mr-2 text-[#10B981]" />
+                  <Target className="w-5 h-5 mr-2 text-white/70" />
                   学習目標
                 </h2>
                 <ul className="space-y-3">
                   {project.learning_goals.map((goal, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-white/60 mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-white/80">{goal}</span>
                     </li>
                   ))}
@@ -285,13 +285,13 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
               {/* 課題・チャレンジ */}
               <GlassCard className="p-6">
                 <h2 className="text-xl font-bold mb-4 flex items-center">
-                  <AlertCircle className="w-5 h-5 mr-2 text-[#F59E0B]" />
+                  <AlertCircle className="w-5 h-5 mr-2 text-white/70" />
                   課題・チャレンジ
                 </h2>
                 <ul className="space-y-3">
                   {project.challenges.map((challenge, index) => (
                     <li key={index} className="flex items-start">
-                      <Zap className="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <Zap className="w-5 h-5 text-white/60 mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-white/80">{challenge}</span>
                     </li>
                   ))}
@@ -304,7 +304,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
                     <span className="text-white/70">全体の完成度</span>
-                    <span className="text-2xl font-bold text-[#00D9FF]">{project.progress}%</span>
+                    <span className="text-2xl font-bold text-white">{project.progress}%</span>
                   </div>
                   
                   {/* ここに追加の進捗情報を表示可能 */}
@@ -407,7 +407,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
             <h3 className="text-lg font-bold mb-4">アクション</h3>
             <div className="space-y-2">
               <Button 
-                className="w-full bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black"
+                className="w-full bg-blue-500 text-white hover:bg-blue-600"
                 onClick={handleShare}
               >
                 <Share2 className="w-4 h-4 mr-2" />
@@ -424,7 +424,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
                 </Link>
               </Button>
               <Button 
-                className="w-full bg-red-500/10 border-red-500/30 hover:bg-red-500/20 text-red-400"
+                className="w-full bg-white/5 border-white/20 hover:bg-white/10 text-white/60"
                 variant="outline"
                 onClick={handleDeleteClick}
               >
@@ -439,17 +439,17 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
             <h3 className="text-lg font-bold mb-4">統計</h3>
             <div className="space-y-3">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#00D9FF]">{project.technologies.length}</div>
+                <div className="text-3xl font-bold text-white">{project.technologies.length}</div>
                 <div className="text-sm text-white/60">使用技術</div>
               </div>
               <Separator className="bg-white/10" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#7C3AED]">{project.learning_goals.length}</div>
+                <div className="text-3xl font-bold text-white">{project.learning_goals.length}</div>
                 <div className="text-sm text-white/60">学習目標</div>
               </div>
               <Separator className="bg-white/10" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#F59E0B]">{project.challenges.length}</div>
+                <div className="text-3xl font-bold text-white">{project.challenges.length}</div>
                 <div className="text-sm text-white/60">課題</div>
               </div>
             </div>
@@ -474,7 +474,7 @@ export function ExperimentalProjectDetail({ project }: ExperimentalProjectDetail
               キャンセル
             </AlertDialogCancel>
             <AlertDialogAction
-              className="bg-red-600 hover:bg-red-700 text-white"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
               onClick={handleDeleteConfirm}
               disabled={isDeleting}
             >

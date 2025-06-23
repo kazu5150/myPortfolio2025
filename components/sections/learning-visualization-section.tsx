@@ -270,10 +270,10 @@ export function LearningVisualizationSection() {
   const getIntensityColor = (level: 0 | 1 | 2 | 3 | 4) => {
     const colors = {
       0: 'bg-white/5',
-      1: 'bg-[#00D9FF]/20',
-      2: 'bg-[#00D9FF]/40',
-      3: 'bg-[#00D9FF]/70',
-      4: 'bg-[#00D9FF]'
+      1: 'bg-blue-500/20',
+      2: 'bg-blue-500/40',
+      3: 'bg-blue-500/60',
+      4: 'bg-blue-500'
     }
     return colors[level]
   }
@@ -281,10 +281,10 @@ export function LearningVisualizationSection() {
   const getAdvancedIntensityColor = (level: 0 | 1 | 2 | 3 | 4) => {
     const colors = {
       0: 'bg-white/5 border border-white/10',
-      1: 'bg-gradient-to-br from-[#0d4429]/80 to-[#006d32]/60 border border-[#0d4429]/60 shadow-[0_0_8px_rgba(13,68,41,0.4)]',
-      2: 'bg-gradient-to-br from-[#006d32]/90 to-[#26a641]/70 border border-[#006d32]/70 shadow-[0_0_12px_rgba(0,109,50,0.5)]',
-      3: 'bg-gradient-to-br from-[#26a641] to-[#39d353]/80 border border-[#26a641]/80 shadow-[0_0_16px_rgba(38,166,65,0.6)]',
-      4: 'bg-gradient-to-br from-[#39d353] to-[#2ea043] border border-[#39d353] shadow-[0_0_20px_rgba(57,211,83,0.8)]'
+      1: 'bg-blue-600/20 border border-blue-600/20',
+      2: 'bg-blue-600/40 border border-blue-600/30',
+      3: 'bg-blue-600/60 border border-blue-600/40',
+      4: 'bg-blue-600 border border-blue-600/50'
     }
     return colors[level]
   }
@@ -309,14 +309,14 @@ export function LearningVisualizationSection() {
     <section id="learning" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6">
-            <GradientText>Learning Journey</GradientText>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading font-display mb-6">
+            <span className="gradient-text">Learning Journey</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8">
-            継続的な学習の軌跡を可視化
+          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 font-light tracking-wide">
+            継続的な学習の軌跡を<span className="gradient-text-secondary font-medium">可視化</span>
           </p>
           <Button
-            className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black font-semibold px-6"
+            className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold px-6 hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
             asChild
           >
             <Link href="/learning">
@@ -328,56 +328,55 @@ export function LearningVisualizationSection() {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Clock className="w-4 h-4 text-white" />
+          <GlassCard className="p-5 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+              <Clock className="w-5 h-5 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl font-bold gradient-text-primary mb-1">
               {loading ? '...' : `${Math.round(stats.totalHours)}h`}
             </div>
-            <div className="text-xs text-white/60">総学習時間</div>
+            <div className="text-sm text-white/60 font-light">総学習時間</div>
           </GlassCard>
 
-          <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#7C3AED] to-[#A855F7] rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Flame className="w-4 h-4 text-white" />
+          <GlassCard className="p-5 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+              <Flame className="w-5 h-5 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl font-bold gradient-text mb-1">
               {loading ? '...' : `${currentStreak}日`}
             </div>
-            <div className="text-xs text-white/60">継続学習</div>
+            <div className="text-sm text-white/60 font-light">継続学習</div>
           </GlassCard>
 
-          <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#10B981] to-[#059669] rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Calendar className="w-4 h-4 text-white" />
+          <GlassCard className="p-5 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+              <Calendar className="w-5 h-5 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl font-bold gradient-text-secondary mb-1">
               {loading ? '...' : `${Math.round(thisWeekHours * 10) / 10}h`}
             </div>
-            <div className="text-xs text-white/60">今週の学習</div>
+            <div className="text-sm text-white/60 font-light">今週の学習</div>
           </GlassCard>
 
-          <GlassCard className="p-4 text-center hover:bg-white/10 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#F59E0B] to-[#D97706] rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Trophy className="w-4 h-4 text-white" />
+          <GlassCard className="p-5 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+              <Trophy className="w-5 h-5 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl font-bold gradient-text-primary mb-1">
               {loading ? '...' : stats.recordCount}
             </div>
-            <div className="text-xs text-white/60">学習記録数</div>
+            <div className="text-sm text-white/60 font-light">学習記録数</div>
           </GlassCard>
         </div>
 
         {/* Simple CSS-based Charts */}
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
           {/* Weekly Progress Chart */}
-          <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00D9FF]/5 to-[#0EA5E9]/5" />
-            <div className="relative z-10">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <BarChart3 className="w-5 h-5 mr-2 text-[#00D9FF]" />
-                週別学習時間
+          <GlassCard className="p-6">
+            <div>
+              <h3 className="text-lg font-light mb-4 flex items-center">
+                <BarChart3 className="w-5 h-5 mr-2 text-blue-500" />
+                <span className="gradient-text-primary">週別学習時間</span>
               </h3>
               <div className="h-48">
                 {loading ? (
@@ -393,7 +392,7 @@ export function LearningVisualizationSection() {
                         <div key={index} className="flex flex-col items-center">
                           <div className="text-xs text-white/60 mb-2">{week.hours}h</div>
                           <div 
-                            className="w-12 bg-gradient-to-t from-[#00D9FF] to-[#0EA5E9] rounded-t-lg transition-all duration-300 hover:scale-105"
+                            className="w-12 bg-blue-500 rounded-t-lg transition-all duration-300"
                             style={{ height: `${Math.max(height, 5)}%` }}
                           />
                           <div className="text-xs text-white/60 mt-2">{week.week}</div>
@@ -411,12 +410,11 @@ export function LearningVisualizationSection() {
           </GlassCard>
 
           {/* Technology Distribution */}
-          <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/5 to-[#A855F7]/5" />
-            <div className="relative z-10">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <Target className="w-5 h-5 mr-2 text-[#7C3AED]" />
-                技術別学習時間
+          <GlassCard className="p-6">
+            <div>
+              <h3 className="text-lg font-light mb-4 flex items-center">
+                <Target className="w-5 h-5 mr-2 text-blue-600" />
+                <span className="gradient-text-primary">技術別学習時間</span>
               </h3>
               <div className="h-48">
                 {loading ? (
@@ -428,7 +426,7 @@ export function LearningVisualizationSection() {
                     {techData.slice(0, 4).map((tech, index) => {
                       const maxHours = Math.max(...techData.map(t => t.hours))
                       const width = maxHours > 0 ? (tech.hours / maxHours) * 100 : 0
-                      const colors = ['from-[#00D9FF] to-[#0EA5E9]', 'from-[#7C3AED] to-[#A855F7]', 'from-[#10B981] to-[#059669]', 'from-[#F59E0B] to-[#D97706]']
+                      const colors = ['from-blue-500 to-blue-600', 'from-blue-600 to-blue-700', 'from-blue-700 to-blue-800', 'from-blue-800 to-blue-900']
                       return (
                         <div key={tech.tech} className="space-y-1">
                           <div className="flex justify-between text-sm">
@@ -455,12 +453,11 @@ export function LearningVisualizationSection() {
           </GlassCard>
 
           {/* Daily Trend */}
-          <GlassCard className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 to-[#059669]/5" />
-            <div className="relative z-10">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <TrendingUp className="w-5 h-5 mr-2 text-[#10B981]" />
-                最近の学習
+          <GlassCard className="p-6">
+            <div>
+              <h3 className="text-lg font-light mb-4 flex items-center">
+                <TrendingUp className="w-5 h-5 mr-2 text-blue-700" />
+                <span className="gradient-text-primary">最近の学習</span>
               </h3>
               <div className="h-48">
                 {loading ? (
@@ -476,7 +473,7 @@ export function LearningVisualizationSection() {
                         <div key={day.date} className="flex flex-col items-center">
                           <div className="text-xs text-white/60 mb-1">{day.hours}h</div>
                           <div 
-                            className="w-6 bg-gradient-to-t from-[#10B981] to-[#34D399] rounded-t transition-all duration-300 hover:scale-110"
+                            className="w-6 bg-blue-700 rounded-t transition-all duration-300"
                             style={{ height: `${Math.max(height, 5)}%` }}
                           />
                           <div className="text-xs text-white/60 mt-1 transform rotate-45 origin-bottom-left">
@@ -500,17 +497,14 @@ export function LearningVisualizationSection() {
         <div className="grid lg:grid-cols-3 gap-8 mb-8">
           {/* Interactive Learning Heatmap */}
           <div className="lg:col-span-2">
-            <GlassCard className="p-6 relative overflow-hidden">
-              {/* Background gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00D9FF]/5 via-transparent to-[#7C3AED]/5 pointer-events-none" />
-              
-              <div className="relative z-10">
+            <GlassCard className="p-6">
+              <div>
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold font-display flex items-center">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#00D9FF] to-[#7C3AED] rounded-lg flex items-center justify-center mr-3">
+                  <h3 className="text-xl modern-heading-thin font-display flex items-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
                       <Calendar className="w-4 h-4 text-white" />
                     </div>
-                    学習アクティビティマップ
+                    <span className="gradient-text">学習アクティビティマップ</span>
                   </h3>
                   <div className="flex items-center space-x-2 text-xs text-white/60">
                     <span>低</span>
@@ -554,7 +548,7 @@ export function LearningVisualizationSection() {
                             if (month >= 6) {
                               months.push(
                                 <span key={weekIndex} className="flex items-center">
-                                  <div className="w-2 h-2 bg-[#00D9FF] rounded-full mr-2" />
+                                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
                                   {(() => {
                                     const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
                                     return monthNames[month - 1]
@@ -569,10 +563,8 @@ export function LearningVisualizationSection() {
                     </div>
                     
                     {/* Enhanced heatmap with animations */}
-                    <div className="p-4 bg-gradient-to-br from-black/30 via-[#26a641]/5 to-black/30 rounded-xl border border-white/20 shadow-2xl backdrop-blur-sm relative overflow-hidden">
-                      {/* Background animated gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#26a641]/10 via-transparent to-[#39d353]/10 animate-pulse opacity-50" />
-                      <div className="relative z-10">
+                    <div className="p-4 rounded-xl border border-white/20">
+                      <div>
                       {(() => {
                         const totalDays = learningData.length
                         const totalWeeks = Math.ceil(totalDays / 7)
@@ -589,19 +581,7 @@ export function LearningVisualizationSection() {
                                   return (
                                     <div
                                       key={dayIndex}
-                                      className={`
-                                        w-4 h-4 rounded-lg cursor-pointer transform transition-all duration-500 
-                                        hover:scale-150 hover:rotate-12 hover:shadow-2xl hover:z-20 relative
-                                        ${getAdvancedIntensityColor(day.level)} 
-                                        ${day.level > 0 ? 'animate-pulse hover:animate-bounce' : 'hover:bg-white/20'}
-                                        before:absolute before:inset-0 before:rounded-lg before:transition-all before:duration-300
-                                        ${day.level > 0 ? 'before:animate-pulse before:bg-gradient-to-r before:from-[#00D9FF]/20 before:to-[#7C3AED]/20' : ''}
-                                      `}
-                                      style={{
-                                        animationDelay: `${(weekIndex * 7 + dayIndex) * 50}ms`,
-                                        animationDuration: day.level > 0 ? `${2 + day.level * 0.5}s` : '2s',
-                                        filter: day.level > 0 ? `brightness(${1 + day.level * 0.2}) saturate(${1 + day.level * 0.3})` : 'brightness(0.8)'
-                                      }}
+                                      className={`w-4 h-4 rounded-lg cursor-pointer ${getAdvancedIntensityColor(day.level)}`}
                                       title={`${formatDate(day.date)}: ${day.hours.toFixed(1)}時間`}
                                     />
                                   )
@@ -642,26 +622,24 @@ export function LearningVisualizationSection() {
           {/* Learning Insights Panel */}
           <div className="space-y-6">
             {/* Streak Tracker */}
-            <GlassCard className="p-6 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#00D9FF]/10" />
-              <div className="relative z-10">
-                <h3 className="text-lg font-bold mb-4 flex items-center">
-                  <Flame className="w-5 h-5 mr-2 text-orange-400" />
-                  学習ストリーク
+            <GlassCard className="p-6">
+              <div>
+                <h3 className="text-lg font-light mb-4 flex items-center">
+                  <Flame className="w-5 h-5 mr-2 text-blue-500" />
+                  <span className="gradient-text-primary">学習ストリーク</span>
                 </h3>
                 <div className="text-center">
-                  <div className="relative">
-                    <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-2">
+                  <div>
+                    <div className="text-4xl font-bold gradient-text mb-2">
                       {currentStreak}
                     </div>
-                    <div className="absolute -inset-4 bg-gradient-to-r from-orange-400/20 to-red-500/20 rounded-full blur-xl animate-pulse" />
                   </div>
                   <div className="text-sm text-white/60 mb-4">連続学習日数</div>
                   <div className="flex justify-center space-x-1">
                     {Array.from({ length: Math.min(currentStreak, 7) }, (_, i) => (
                       <div
                         key={i}
-                        className={`w-2 h-8 bg-gradient-to-t from-orange-400 to-orange-300 rounded-full animate-bounce animation-delay-${i}`}
+                        className="w-2 h-8 bg-blue-500 rounded-full"
                       />
                     ))}
                   </div>
@@ -670,31 +648,27 @@ export function LearningVisualizationSection() {
             </GlassCard>
 
             {/* Weekly Progress */}
-            <GlassCard className="p-6 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-[#00D9FF]/10" />
-              <div className="relative z-10">
-                <h3 className="text-lg font-bold mb-4 flex items-center">
-                  <Target className="w-5 h-5 mr-2 text-[#10B981]" />
-                  今週の進捗
+            <GlassCard className="p-6">
+              <div>
+                <h3 className="text-lg font-light mb-4 flex items-center">
+                  <Target className="w-5 h-5 mr-2 text-blue-700" />
+                  <span className="gradient-text-primary">今週の進捗</span>
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-white/80">学習時間</span>
-                    <span className="font-bold text-[#00D9FF] text-lg">
+                    <span className="font-bold gradient-text text-lg">
                       {Math.round(thisWeekHours * 10) / 10}h
                     </span>
                   </div>
                   
-                  {/* Animated progress bar */}
-                  <div className="relative">
-                    <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
+                  {/* Progress bar */}
+                  <div>
+                    <div className="w-full bg-white/10 rounded-full h-3">
                       <div 
-                        className="h-full bg-gradient-to-r from-[#00D9FF] to-[#10B981] rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
+                        className="h-full bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 rounded-full transition-all duration-300"
                         style={{ width: `${Math.min((thisWeekHours / 10) * 100, 100)}%` }}
-                      >
-                        <div className="absolute inset-0 bg-white/30 animate-pulse" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
-                      </div>
+                      />
                     </div>
                     <div className="text-xs text-white/60 text-center mt-2">
                       目標: 10時間/週
@@ -703,7 +677,7 @@ export function LearningVisualizationSection() {
                   
                   <div className="flex justify-between items-center">
                     <span className="text-white/80">学習日数</span>
-                    <span className="font-bold text-[#10B981]">
+                    <span className="font-bold gradient-text-secondary">
                       {thisWeekDays}/7日
                     </span>
                   </div>
@@ -716,19 +690,19 @@ export function LearningVisualizationSection() {
         {/* Recent Learning Activities */}
         {recentLearning.length > 0 && (
           <GlassCard className="p-6">
-            <h3 className="text-xl font-bold mb-4 font-display flex items-center">
-              <TrendingUp className="w-5 h-5 mr-2 text-[#00D9FF]" />
-              最近の学習記録
+            <h3 className="text-xl modern-heading-thin mb-4 font-display flex items-center">
+              <TrendingUp className="w-5 h-5 mr-2 text-blue-500" />
+              <span className="gradient-text">最近の学習記録</span>
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
               {recentLearning.map((record) => (
-                <div key={record.id} className="border-l-2 border-[#00D9FF]/30 pl-4 space-y-2">
+                <div key={record.id} className="border-l-2 border-blue-500/30 pl-4 space-y-2">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
-                      <div className="text-sm font-bold bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] bg-clip-text text-transparent mb-2">
+                      <div className="text-sm font-bold gradient-text-primary mb-2">
                         {record.title}
                       </div>
-                      <div className="text-xs text-[#00D9FF] font-medium">
+                      <div className="text-xs gradient-text font-medium">
                         {Math.floor(record.duration / 60)}h {record.duration % 60}m
                       </div>
                     </div>

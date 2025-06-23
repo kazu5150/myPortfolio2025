@@ -7,15 +7,9 @@ interface GradientTextProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 export function GradientText({ children, className, gradient = "blue-purple", ...props }: GradientTextProps) {
-  const gradients = {
-    "blue-purple": "from-[#00D9FF] to-[#7C3AED]",
-    "blue-green": "from-[#00D9FF] to-[#10B981]",
-    "purple-pink": "from-[#7C3AED] to-[#EC4899]",
-  }
-
   return (
     <span
-      className={cn("bg-gradient-to-r bg-clip-text text-transparent font-bold", gradients[gradient], className)}
+      className={cn("text-white font-bold", className)}
       {...props}
     >
       {children}

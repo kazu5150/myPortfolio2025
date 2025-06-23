@@ -11,6 +11,7 @@ import { Slider } from "@/components/ui/slider"
 import { Plus, Edit2, Trash2, Save, X } from "lucide-react"
 import { getExperimentalProjects, createExperimentalProject, updateExperimentalProject, deleteExperimentalProject } from "@/lib/database"
 import { ExperimentalProject } from "@/lib/supabase"
+import { Badge } from "@/components/ui/badge"
 
 const userId = '11111111-1111-1111-1111-111111111111' // 仮のユーザーID
 
@@ -146,7 +147,7 @@ export default function ExperimentsDashboardPage() {
         {!isCreating && !editingProject && (
           <Button 
             onClick={() => setIsCreating(true)}
-            className="bg-gradient-to-r from-[#00D9FF] to-[#0EA5E9] text-black"
+            className="bg-blue-500 text-white hover:bg-blue-600"
           >
             <Plus className="w-4 h-4 mr-2" />
             新規プロジェクト
@@ -317,7 +318,7 @@ export default function ExperimentsDashboardPage() {
           </div>
 
           <div className="flex gap-2 mt-6">
-            <Button onClick={handleSave} className="bg-green-600 hover:bg-green-700">
+            <Button onClick={handleSave} className="bg-blue-500 hover:bg-blue-600 text-white">
               <Save className="w-4 h-4 mr-2" />
               保存
             </Button>
@@ -354,7 +355,7 @@ export default function ExperimentsDashboardPage() {
                 <Button 
                   size="sm" 
                   variant="outline"
-                  className="text-red-400 hover:text-red-300"
+                  className="text-white/60 hover:text-white/80"
                   onClick={() => handleDelete(project.id)}
                 >
                   <Trash2 className="w-4 h-4" />
