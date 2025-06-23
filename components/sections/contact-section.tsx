@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { GlassCard } from "@/components/ui/glass-card"
-import { GradientText } from "@/components/ui/gradient-text"
 import { Mail, MessageSquare, Send, MapPin, Phone } from "lucide-react"
 
 export function ContactSection() {
@@ -36,11 +35,11 @@ export function ContactSection() {
     <section id="contact" className="py-20 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
             <span className="gradient-text">Contact</span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-light tracking-wide">
-            <span className="gradient-text-secondary font-medium">プロジェクトのご相談</span>やお仕事のご依頼、お気軽にお問い合わせください
+            <span className="gradient-text-secondary font-light">プロジェクトのご相談</span>やお仕事のご依頼、お気軽にお問い合わせください
           </p>
         </div>
 
@@ -121,7 +120,7 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
+                  className="w-full bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-light hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   メッセージを送信

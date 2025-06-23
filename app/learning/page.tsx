@@ -245,7 +245,7 @@ export default function LearningPage() {
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
               <GradientText>Learning Records</GradientText>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8">
@@ -253,7 +253,7 @@ export default function LearningPage() {
             </p>
             <Button
               onClick={() => setShowForm(!showForm)}
-              className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
+              className="bg-blue-500 text-white font-light px-6 hover:bg-blue-600"
             >
               <Plus className="w-4 h-4 mr-2" />
               新しい学習記録
@@ -447,7 +447,7 @@ export default function LearningPage() {
                     <Button
                       type="submit"
                       disabled={saving}
-                      className="bg-blue-500 text-white font-semibold hover:bg-blue-600"
+                      className="bg-blue-500 text-white font-light hover:bg-blue-600"
                     >
                       {saving ? '保存中...' : editingRecord ? '更新する' : '記録を保存'}
                     </Button>
@@ -477,7 +477,7 @@ export default function LearningPage() {
                 <p className="text-white/60 text-lg mb-4">まだ学習記録がありません</p>
                 <Button
                   onClick={() => setShowForm(true)}
-                  className="bg-blue-500 text-white font-semibold hover:bg-blue-600"
+                  className="bg-blue-500 text-white font-light hover:bg-blue-600"
                 >
                   最初の記録を作成
                 </Button>
@@ -488,7 +488,7 @@ export default function LearningPage() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <CardTitle className="text-xl font-bold text-white mb-3">
+                        <CardTitle className="text-xl modern-heading text-white mb-3">
                           {record.title}
                         </CardTitle>
                         <div className="flex items-center space-x-4 mb-3">

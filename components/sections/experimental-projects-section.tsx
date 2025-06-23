@@ -113,7 +113,7 @@ export function ExperimentalProjectsSection() {
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl modern-heading-thin gradient-text">プロジェクト一覧</h2>
         <Button
-          className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
+          className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-light hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
           asChild
         >
           <Link href="/experiments/new">
@@ -190,7 +190,7 @@ export function ExperimentalProjectsSection() {
                     <CategoryIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-light gradient-text">{project.title}</h3>
+                    <h3 className="text-lg modern-heading gradient-text">{project.title}</h3>
                     <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs border ${statusStyle.color} mt-1`}>
                       {statusStyle.label}
                     </div>
@@ -204,7 +204,7 @@ export function ExperimentalProjectsSection() {
               <div className="mb-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-white/60">進捗</span>
-                  <span className="text-sm gradient-text-primary font-medium">{project.progress}%</span>
+                  <span className="text-sm gradient-text-primary font-light">{project.progress}%</span>
                 </div>
                 <div className="w-full bg-white/10 rounded-full h-2">
                   <div 

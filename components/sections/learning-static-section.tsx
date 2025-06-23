@@ -10,8 +10,8 @@ export function LearningStaticSection() {
     <section id="learning" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6">
-            <GradientText>Learning Journey</GradientText>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
+            <span className="gradient-text">Learning Journey</span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8">
             継続的な学習の軌跡を可視化

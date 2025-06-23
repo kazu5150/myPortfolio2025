@@ -2,7 +2,6 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from "@/component
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
-import { GradientText } from "@/components/ui/gradient-text"
 import { ExternalLink, Github, Calendar } from "lucide-react"
 import Image from "next/image"
 
@@ -78,10 +77,10 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
             <span className="gradient-text">Portfolio</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-light tracking-wide">学習した技術を活用して制作した<span className="gradient-text-secondary font-medium">プロジェクト</span>の紹介</p>
+          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-light tracking-wide">学習した技術を活用して制作した<span className="gradient-text-secondary font-light">プロジェクト</span>の紹介</p>
         </div>
 
         {/* Featured Projects */}
@@ -101,7 +100,7 @@ export function PortfolioSection() {
                 </div>
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-light font-display gradient-text">{project.title}</CardTitle>
+                    <CardTitle className="text-xl modern-heading font-display gradient-text">{project.title}</CardTitle>
                     <div className="flex items-center text-sm text-white/60">
                       <Calendar className="w-4 h-4 mr-1" />
                       {project.date}
@@ -157,7 +156,7 @@ export function PortfolioSection() {
                 </div>
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-lg font-light font-display gradient-text">{project.title}</CardTitle>
+                    <CardTitle className="text-lg modern-heading font-display gradient-text">{project.title}</CardTitle>
                     <div className="flex items-center text-xs text-white/60">
                       <Calendar className="w-3 h-3 mr-1" />
                       {project.date}
@@ -208,7 +207,7 @@ export function PortfolioSection() {
         <div className="text-center mt-12">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold px-8 hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
+            className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-light px-8 hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
           >
             View All Projects
           </Button>

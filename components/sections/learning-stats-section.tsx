@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
-import { GradientText } from "@/components/ui/gradient-text"
 import { Calendar, Clock, Trophy, TrendingUp, BookOpen, Code2, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { getLearningStats, getLearningRecords } from "@/lib/database"
@@ -67,14 +66,14 @@ export function LearningStatsSection() {
     <section id="learning" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6">
-            <GradientText>Learning Journey</GradientText>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
+            <span className="gradient-text">Learning Journey</span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8">
             日々の学習を可視化し、継続的な成長を追跡
           </p>
           <Button
-            className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
+            className="bg-blue-500 text-white font-light px-6 hover:bg-blue-600"
             asChild
           >
             <Link href="/learning">
@@ -90,7 +89,7 @@ export function LearningStatsSection() {
             <div className="w-11 h-11 bg-blue-500 rounded-xl flex items-center justify-center mx-auto mb-3">
               <Clock className="w-5 h-5 text-white" />
             </div>
-            <div className="text-2xl font-semibold font-display mb-1 text-white">
+            <div className="text-2xl modern-heading font-display mb-1 text-white">
               {loading ? '...' : `${stats.totalHours}h`}
             </div>
             <div className="text-sm text-white/60">総学習時間</div>
@@ -100,7 +99,7 @@ export function LearningStatsSection() {
             <div className="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
               <Calendar className="w-5 h-5 text-white" />
             </div>
-            <div className="text-2xl font-semibold font-display mb-1 text-white">
+            <div className="text-2xl modern-heading font-display mb-1 text-white">
               {loading ? '...' : stats.recordCount}
             </div>
             <div className="text-sm text-white/60">学習記録数</div>
@@ -110,7 +109,7 @@ export function LearningStatsSection() {
             <div className="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-3">
               <Trophy className="w-5 h-5 text-white" />
             </div>
-            <div className="text-2xl font-semibold font-display mb-1 text-white">
+            <div className="text-2xl modern-heading font-display mb-1 text-white">
               {loading ? '...' : stats.projectCount}
             </div>
             <div className="text-sm text-white/60">完了プロジェクト</div>
@@ -120,7 +119,7 @@ export function LearningStatsSection() {
             <div className="w-11 h-11 bg-blue-800 rounded-xl flex items-center justify-center mx-auto mb-3">
               <TrendingUp className="w-5 h-5 text-white" />
             </div>
-            <div className="text-2xl font-semibold font-display mb-1 text-white">
+            <div className="text-2xl modern-heading font-display mb-1 text-white">
               {loading ? '...' : stats.skillCount}
             </div>
             <div className="text-sm text-white/60">習得技術数</div>
@@ -130,7 +129,7 @@ export function LearningStatsSection() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Recent Learning */}
           <GlassCard className="p-6">
-            <h3 className="text-xl font-semibold mb-4 font-display flex items-center text-white">
+            <h3 className="text-xl modern-heading mb-4 font-display flex items-center text-white">
               <BookOpen className="w-5 h-5 mr-2 text-blue-500" />
               最近の学習記録
             </h3>
@@ -148,7 +147,7 @@ export function LearningStatsSection() {
                   <div key={item.id} className="border-l-2 border-white/20 pl-6 relative">
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-semibold text-white">{item.description || '学習記録'}</h4>
+                      <h4 className="modern-heading text-white">{item.description || '学習記録'}</h4>
                     </div>
                     <div className="flex items-center text-sm text-white/60 mb-3">
                       <Clock className="w-4 h-4 mr-1" />
@@ -170,7 +169,7 @@ export function LearningStatsSection() {
 
           {/* Achievements */}
           <GlassCard className="p-6">
-            <h3 className="text-xl font-semibold mb-4 font-display flex items-center text-white">
+            <h3 className="text-xl modern-heading mb-4 font-display flex items-center text-white">
               <Trophy className="w-5 h-5 mr-2 text-blue-500" />
               アチーブメント
             </h3>
@@ -185,14 +184,14 @@ export function LearningStatsSection() {
                   >
                     <achievement.icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="font-medium text-white">{achievement.title}</span>
+                  <span className="font-light text-white">{achievement.title}</span>
                 </div>
               ))}
             </div>
 
             {/* Learning Streak Visualization */}
             <div className="mt-8">
-              <h4 className="font-semibold mb-4 text-white">学習継続状況</h4>
+              <h4 className="modern-heading mb-4 text-white">学習継続状況</h4>
               <div className="grid grid-cols-7 gap-1">
                 {Array.from({ length: 49 }, (_, i) => {
                   // 決定的なパターンを使用してハイドレーションエラーを防ぐ

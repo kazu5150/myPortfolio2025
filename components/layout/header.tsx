@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Code2 } from "lucide-react"
 import { GlassCard } from "@/components/ui/glass-card"
-import { GradientText } from "@/components/ui/gradient-text"
 
 const navigation = [
   { name: "About", href: "#about" },
@@ -37,7 +36,7 @@ export function Header() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg">
                 <Code2 className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-light font-display gradient-text">AI Portfolio</span>
+              <span className="text-xl modern-heading font-display gradient-text">AI Portfolio</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -52,7 +51,7 @@ export function Header() {
                 </Link>
               ))}
               <Button
-                className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
+                className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-light hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                 asChild
               >
                 <Link href="#contact">Contact</Link>
@@ -78,7 +77,7 @@ export function Header() {
                     </Link>
                   ))}
                   <Button
-                    className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold w-full hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
+                    className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-light w-full hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                     asChild
                   >
                     <Link href="#contact">Contact</Link>

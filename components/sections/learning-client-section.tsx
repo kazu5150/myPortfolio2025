@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { GlassCard } from "@/components/ui/glass-card"
-import { GradientText } from "@/components/ui/gradient-text"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, Trophy, TrendingUp, Target, ArrowRight, Flame, BarChart3 } from "lucide-react"
 import Link from "next/link"
@@ -100,7 +99,9 @@ export function LearningClientSection() {
       <section id="learning" className="py-16 relative">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Learning Journey</h2>
+            <h2 className="text-3xl modern-heading-thin font-display mb-4">
+              <span className="gradient-text">Learning Journey</span>
+            </h2>
             <p className="text-white/70">Loading...</p>
           </div>
         </div>
@@ -112,14 +113,14 @@ export function LearningClientSection() {
     <section id="learning" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6">
-            <GradientText>Learning Journey</GradientText>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl modern-heading-thin font-display mb-6">
+            <span className="gradient-text">Learning Journey</span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8">
             継続的な学習の軌跡を可視化
           </p>
           <Button
-            className="bg-blue-500 text-white font-semibold px-6 hover:bg-blue-600"
+            className="bg-blue-500 text-white font-light px-6 hover:bg-blue-600"
             asChild
           >
             <Link href="/learning">
@@ -135,7 +136,7 @@ export function LearningClientSection() {
             <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Clock className="w-4 h-4 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl modern-heading text-white mb-1">
               {loading ? '...' : `${Math.round(stats.totalHours)}h`}
             </div>
             <div className="text-xs text-white/60">総学習時間</div>
@@ -145,7 +146,7 @@ export function LearningClientSection() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Calendar className="w-4 h-4 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl modern-heading text-white mb-1">
               {loading ? '...' : stats.recordCount}
             </div>
             <div className="text-xs text-white/60">学習記録数</div>
@@ -155,7 +156,7 @@ export function LearningClientSection() {
             <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Trophy className="w-4 h-4 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl modern-heading text-white mb-1">
               {loading ? '...' : stats.projectCount}
             </div>
             <div className="text-xs text-white/60">プロジェクト</div>
@@ -165,7 +166,7 @@ export function LearningClientSection() {
             <div className="w-8 h-8 bg-blue-800 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Target className="w-4 h-4 text-white" />
             </div>
-            <div className="text-xl font-bold text-white mb-1">
+            <div className="text-xl modern-heading text-white mb-1">
               {loading ? '...' : stats.skillCount}
             </div>
             <div className="text-xs text-white/60">スキル数</div>
@@ -176,7 +177,7 @@ export function LearningClientSection() {
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Weekly Progress */}
           <GlassCard className="p-6">
-            <h3 className="text-lg font-bold mb-4 flex items-center">
+            <h3 className="text-lg modern-heading mb-4 flex items-center">
               <BarChart3 className="w-5 h-5 mr-2 text-[#00D9FF]" />
               週別学習時間
             </h3>
@@ -214,7 +215,7 @@ export function LearningClientSection() {
 
           {/* Technology Distribution */}
           <GlassCard className="p-6">
-            <h3 className="text-lg font-bold mb-4 flex items-center">
+            <h3 className="text-lg modern-heading mb-4 flex items-center">
               <Target className="w-5 h-5 mr-2 text-[#7C3AED]" />
               技術別学習時間
             </h3>
