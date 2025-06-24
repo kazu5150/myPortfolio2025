@@ -11,7 +11,6 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { GlassCard } from '@/components/ui/glass-card'
 import { GradientText } from '@/components/ui/gradient-text'
-import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { createBlogPost } from '@/lib/database'
 import { Save, Eye, Plus, X } from 'lucide-react'
@@ -108,8 +107,6 @@ export default function NewBlogPage() {
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
-      
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}

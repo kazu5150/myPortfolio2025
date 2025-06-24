@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getExperimentalProjectById } from '@/lib/database'
 import { ExperimentalProjectDetail } from '@/components/sections/experimental-project-detail'
-import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 
 export default async function ExperimentProjectPage({ params }: { params: { id: string } }) {
@@ -13,7 +12,6 @@ export default async function ExperimentProjectPage({ params }: { params: { id: 
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
       <main className="pt-20">
         <ExperimentalProjectDetail project={project} />
       </main>

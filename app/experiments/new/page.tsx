@@ -14,7 +14,6 @@ import { ArrowLeft, Save, X, Plus, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { createExperimentalProject } from "@/lib/database"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 
 const userId = '11111111-1111-1111-1111-111111111111' // 仮のユーザーID
@@ -96,7 +95,6 @@ export default function NewExperimentPage() {
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
       <main className="pt-20 pb-12">
         <div className="max-w-4xl mx-auto px-8 md:px-12">
           <Link href="/experiments">

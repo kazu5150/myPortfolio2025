@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { SideMenu } from "@/components/layout/side-menu"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,7 +45,13 @@ export default function RootLayout({
           enableSystem={false} 
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-screen">
+            <SideMenu />
+            <main className="flex-1 overflow-x-hidden">
+              {children}
+            </main>
+          </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

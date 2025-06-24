@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/dialog"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Header } from "@/components/layout/header"
 import { Plus, Edit, Trash2, BarChart3, BookOpen, FolderOpen, MessageSquare, Settings } from "lucide-react"
 
 // Mock data
@@ -40,8 +39,6 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}

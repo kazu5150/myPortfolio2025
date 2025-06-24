@@ -11,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ArrowLeft, Save, Eye, Trash2, Plus, X } from "lucide-react"
 import Link from "next/link"
@@ -153,8 +152,6 @@ export default function BlogEditPage({ params }: BlogEditPageProps) {
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}

@@ -1,11 +1,9 @@
 import { ExperimentalProjectsSection } from "@/components/sections/experimental-projects-section"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 
 export default function ExperimentsPage() {
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
       <main className="pt-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12 py-12">
           <div className="text-center mb-12">

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Calendar, Clock, Search, Tag, Plus } from "lucide-react"
 import Link from "next/link"
@@ -51,8 +50,6 @@ function BlogPage() {
   }
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}

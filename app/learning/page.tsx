@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Calendar, Clock, Plus, X, BookOpen, Target, Trash2, Edit3, Image, Upload } from "lucide-react"
 import { getLearningRecords, createLearningRecord, updateLearningRecord, deleteLearningRecord } from "@/lib/database"
@@ -239,8 +238,6 @@ export default function LearningPage() {
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Header />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-8 md:px-12">
           {/* Header */}
